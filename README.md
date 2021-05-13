@@ -1,5 +1,6 @@
 # AdventureGame
 A simple adventure game, will get expanded later
+
 Current plans:
 - Give it a story and a proper name
 - Add an enemy (goblins?)
