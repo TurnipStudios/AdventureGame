@@ -73,10 +73,10 @@ def init(position):
 
 
 def start_room_logic():
-    init(12)
     global current_room
     current_room = start_room
     print("You are now in the start room!")
+    init(12)
     while True:
         if int(player_position()) == 24:
             end_room_logic()
