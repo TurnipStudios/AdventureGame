@@ -21,7 +21,6 @@ jobs:
         name: adventure-win
         path: src/adventure/dist/windows
         
-    - name: Cache
     - uses: actions/cache@v2
       with:
         path: ~/.cache/pip
