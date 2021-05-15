@@ -1,11 +1,7 @@
 
 name: Package for Windows
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -18,9 +14,18 @@ jobs:
     - name: Package Application
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
-        path: src
+        path: src/adventure
 
     - uses: actions/upload-artifact@v2
       with:
-        name: name-of-artifact
-        path: src/dist/windows
+        name: adventure-win
+        path: src/adventure/dist/windows
+        
+    - name: Cache
+    - uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
