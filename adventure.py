@@ -125,6 +125,8 @@ def handle_commands():
         update_player(int(player_position()) - 5)
     elif (command == "down" or command == "s") and is_player_colliding() != "down":
         update_player(int(player_position()) + 5)
+    elif (command == "exit")
+        exit()
     else:
         print("Invalid command!")
 
@@ -176,6 +178,7 @@ def end_room_logic():
             start_room_logic()
         draw_room(current_room)
         handle_commands()
+        goblin_ai()
 
 
 main()
